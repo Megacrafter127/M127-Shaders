@@ -1,0 +1,20 @@
+{
+  "name": "net.m127.shader.materialtransition",
+  "displayName": "Material Transition Shader",
+  "description": "M127's Material Transition Shader",
+  "version": "1.0.0",
+  "author": {
+    "name": "M127",
+    "email": "Megacrafter127@web.de"
+  },
+  "keywords": null,
+  "zipSHA256": null,
+  "dependencies": {
+    "net.m127.vertexcolor.bounds": "1.0.0"
+  },
+  "vpmDependencies": {
+    "net.m127.vertexcolor.bounds": "1.x.x"
+  },
+  "type": "tool",
+  "unity": "2019.4"
+}
