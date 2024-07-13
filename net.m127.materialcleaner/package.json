@@ -1,0 +1,17 @@
+{
+  "name": "net.m127.materialcleaner",
+  "displayName": "Material Cleaner",
+  "description": "M127's Material Cleaning Utility",
+  "version": "1.0.0",
+  "author": {
+    "name": "M127",
+    "email": "Megacrafter127@web.de"
+  },
+  "keywords": null,
+  "zipSHA256": null,
+  "dependencies": {
+    "com.unity.editorcoroutines": "1.0.0"
+  },
+  "type": "tool",
+  "unity": "2022.3"
+}
