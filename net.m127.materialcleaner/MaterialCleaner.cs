@@ -55,6 +55,7 @@ public class MaterialCleaner : EditorWindow
         materials.ExceptWith(removed);
         materials.UnionWith(added);
         if(GUILayout.Button("Clean")) {
+            busy = true;
             Material[] undos = new Material[materials.Count];
             materials.CopyTo(undos, 0);
             Undo.RecordObjects(undos, "Clean Properties");
