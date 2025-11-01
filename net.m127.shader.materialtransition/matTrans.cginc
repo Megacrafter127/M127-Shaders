@@ -21,8 +21,14 @@ float gradientDir(float3 restPos, float3 dir, float3 bbmin, float3 bbmax)
 
 float distLerp(float grad, float pt, float range)
 {
+    float sign = 1, offset = 0;
+    if(pt > 1) {
+        sign = -1;
+        offset = 1;
+        pt -= 1;
+    }    
     grad *= 1 - 2 * range;
     grad += range;
     const float min = pt - range, max = pt + range;
-    return smoothstep(min, max, grad);
+    return sign * smoothstep(min, max, grad) + offset;
 }
