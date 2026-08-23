@@ -75,6 +75,24 @@ namespace M127
             private bool albedoFold, specFold, normalFold, emissionFold;
             public void apply(MaterialEditor editor, out bool cnormal)
             {
+                Material reference = EditorGUILayout.ObjectField("Reference", null, typeof(Material), true) as Material;
+                if(reference != null) {
+                    albedo.textureValue = reference.GetTexture(ALBEDO_NAME);
+                    albedo.textureScaleAndOffset = reference.GetTextureOffset(ALBEDO_NAME);
+                    color.colorValue = reference.GetColor(COLOR_NAME);
+                    specMap.textureValue = reference.GetTexture(SPEC_MAP_NAME);
+                    specMap.textureScaleAndOffset = reference.GetTextureScale(SPEC_MAP_NAME);
+                    specular.floatValue = reference.GetFloat(SPEC_NAME);
+                    smoothness.floatValue = reference.GetFloat(SMOOTHNESS_NAME);
+                    smoothness_channel.floatValue = reference.GetFloat(SMOOTHNESS_CHANNEL_NAME);
+                    normal.textureValue = reference.GetTexture(NORMAL_NAME);
+                    normal.textureScaleAndOffset = reference.GetTextureOffset(NORMAL_NAME);
+                    normalScale.floatValue = reference.GetFloat(NORMAL_SCALE_NAME);
+                    emission.textureValue = reference.GetTexture(EMISSION_NAME);
+                    emission.textureScaleAndOffset = reference.GetTextureScale(EMISSION_NAME);
+                    emissionColor.colorValue = reference.GetColor(EMISSION_COLOR_NAME);
+                }
+                
                 bool hasAlbedo = albedo.textureValue != null;
                 editor.TexturePropertySingleLine(EditorGUIUtility.TrTextContent(albedo.displayName, ALBEDO_TT), albedo, color);
                 if (hasAlbedo)
